@@ -4689,7 +4689,7 @@ void clusterGenNodesSlotsInfo(int filter) {
          * or end of slot. */
         if (i == CLUSTER_SLOTS || n != server.cluster->slots[i]) {
             if (!(n->flags & filter)) {
-                if(!n->slot_info_pairs){
+                if(!n->slot_info_pairs) {
                     n->slot_info_pairs = zrealloc(n->slot_info_pairs, 2 * n->numslots * sizeof(uint16_t));
                 }
                 n->slot_info_pairs[n->slot_info_pairs_count++] = start;
